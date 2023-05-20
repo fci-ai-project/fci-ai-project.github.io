@@ -3,25 +3,22 @@
 \usepackage{graphicx}
 
 \graphicspath{ {./images/} }
-\def \iso{\footnote{ISO/IEC 25010:2011}}
 
 \begin{document}
 
-\title{On AI code assistants and adversary search algorithms}
+\title{Usage of GitHub Co-pilot in our AI course project}
 \author{
     Ahmed Wael \and Adham Hazem \and Omar Brikaa \and Mootaz Medhat \and Ali Esmat
 }
 \date{\today}
 \maketitle
 
-\tableofcontents
-
-\section{Usage of AI code assistants in the course project}
+\section{Introduction}
 Using Prolog as our programming language of choice for the AI course project,
 we have found some advantages and disadvantages of using GitHub Co-pilot to auto-generate code.
 
-\subsection{Advantages}
-we have mostly found GitHub Co-pilot\footnote{https://github.com/features/copilot} to suggest correct code completion
+\section{Advantages}
+We have mostly found GitHub Co-pilot\footnote{https://github.com/features/copilot} to suggest correct code completion
 in two cases:
 avoiding manually typing code that does not require cognitive effort
 (figures \ref{fig:copilot_html}, \ref{fig:copilot_dictionary}),
@@ -54,7 +51,7 @@ Even if the code that Co-pilot generated in these cases was not used as is, it w
     \label{fig:copilot_maximum}
 \end{figure}
 
-\subsection{Disadvantages}
+\section{Disadvantages}
 We have mostly found GitHub Co-pilot to generate inaccurate code in codebase-specific algorithms that aren't commonly
 used in other projects (figure \ref{fig:copilot_diagonal}).
 
