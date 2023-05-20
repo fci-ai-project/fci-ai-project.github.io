@@ -3,6 +3,7 @@
 \usepackage{graphicx}
 
 \graphicspath{ {./images/} }
+\usepackage{float}
 
 \begin{document}
 
@@ -21,17 +22,233 @@ and the other with the computer playing using the alpha-beta pruning algorithm.
 The same moves were made both times.
 
 \section{Games}
-\begin{figure}
+The following sections show textual statistics about the moves made in each game
+and scatter charts showing the time taken to perform each move.
+
+In the textual statistics block, the first line is the human's move,
+the second is a pair consisting of the computer's move and the heuristic estimation for this move
+and the third is the performance statistics
+
+\subsection{Game 1}
+
+\begin{figure}[H]
     \includegraphics[width=\textwidth]{minimax-vs-abp-1}
     \caption{Game 1}
     \label{fig:game_1}
 \end{figure}
 
-\begin{figure}
+Minimax textual statistics:
+\begin{verbatim}
+    3
+    [3,12]
+    % 42,280,716 inferences, 2.582 CPU in 2.584 seconds
+    2
+    [3,20]
+    % 42,519,134 inferences, 2.614 CPU in 2.616 seconds
+    4
+    [1,14]
+    % 40,517,478 inferences, 2.492 CPU in 2.493 seconds
+    3
+    [3,21]
+    % 41,944,727 inferences, 2.535 CPU in 2.536 seconds
+    6
+    [5,26]
+    % 35,131,146 inferences, 2.240 CPU in 2.242 seconds
+    5
+    [3,31]
+    % 43,228,206 inferences, 2.611 CPU in 2.612 seconds
+    1
+    [5,35]
+    % 43,201,541 inferences, 2.709 CPU in 2.711 seconds
+    0
+    [3,40]
+    % 43,548,639 inferences, 2.547 CPU in 2.548 seconds
+    3
+    [1,42]
+    % 26,017,156 inferences, 1.693 CPU in 1.694 seconds
+    1
+    [1,42]
+    % 26,087,886 inferences, 1.537 CPU in 1.537 seconds
+    5
+    [5,45]
+    % 26,167,773 inferences, 1.758 CPU in 1.759 seconds
+    7
+    [5,48]
+    % 26,390,374 inferences, 1.548 CPU in 1.549 seconds
+    7
+    [5,51]
+    % 26,298,711 inferences, 1.732 CPU in 1.733 seconds
+    5
+    [1,54]
+    % 14,576,416 inferences, 0.863 CPU in 0.865 seconds
+    1
+    [7,51]
+    % 12,737,689 inferences, 0.808 CPU in 0.809 seconds
+    7
+    [0,52]
+    % 12,775,972 inferences, 0.760 CPU in 0.760 seconds
+    1
+    [0,55]
+    % 7,210,814 inferences, 0.437 CPU in 0.437 seconds
+    0
+    [2,51]
+    % 7,223,652 inferences, 0.437 CPU in 0.437 seconds
+    7
+    [4,54]
+    % 7,087,868 inferences, 0.430 CPU in 0.430 seconds
+    4
+    [2,1000000]
+    % 4,429,841 inferences, 0.274 CPU in 0.274 seconds
+    2
+    [4,1000000]
+    % 2,362,921 inferences, 0.153 CPU in 0.153 seconds
+\end{verbatim}
+
+Alpha-beta pruning textual statistics:
+\begin{verbatim}
+    3
+    [3,12]
+    % 5,716,313 inferences, 0.371 CPU in 0.371 seconds
+    2
+    [3,20]
+    % 7,166,306 inferences, 0.457 CPU in 0.457 seconds
+    4
+    [1,14]
+    % 6,137,486 inferences, 0.398 CPU in 0.398 seconds
+    3
+    [3,21]
+    % 12,046,441 inferences, 0.769 CPU in 0.769 seconds
+    6
+    [5,26]
+    % 14,533,102 inferences, 0.910 CPU in 0.911 seconds
+    5
+    [3,31]
+    % 8,748,823 inferences, 0.531 CPU in 0.532 seconds
+    1
+    [5,35]
+    % 10,596,873 inferences, 0.691 CPU in 0.691 seconds
+    0
+    [3,40]
+    % 10,254,576 inferences, 0.631 CPU in 0.631 seconds
+    3
+    [1,42]
+    % 7,135,330 inferences, 0.455 CPU in 0.456 seconds
+    1
+    [1,42]
+    % 7,452,837 inferences, 0.536 CPU in 0.536 seconds
+    5
+    [5,45]
+    % 10,051,487 inferences, 0.606 CPU in 0.606 seconds
+    7
+    [5,48]
+    % 7,972,577 inferences, 0.482 CPU in 0.483 seconds
+    7
+    [5,51]
+    % 9,303,089 inferences, 0.670 CPU in 0.670 seconds
+    5
+    [1,54]
+    % 5,924,528 inferences, 0.363 CPU in 0.363 seconds
+    1
+    [7,51]
+    % 4,856,939 inferences, 0.300 CPU in 0.300 seconds
+    7
+    [0,52]
+    % 4,255,380 inferences, 0.269 CPU in 0.269 seconds
+    1
+    [0,55]
+    % 1,995,347 inferences, 0.132 CPU in 0.132 seconds
+    0
+    [2,51]
+    % 2,682,877 inferences, 0.272 CPU in 0.272 seconds
+    7
+    [4,54]
+    % 1,928,964 inferences, 0.130 CPU in 0.130 seconds
+    4
+    [2,1000000]
+    % 839,921 inferences, 0.066 CPU in 0.066 seconds
+    2
+    [4,1000000]
+    % 498,434 inferences, 0.045 CPU in 0.045 seconds
+\end{verbatim}
+
+\subsection{Game 2}
+
+\begin{figure}[H]
     \includegraphics[width=\textwidth]{minimax-vs-abp-2}
     \caption{Game 2}
     \label{fig:game_2}
 \end{figure}
 
+Minimax textual statistics
+\begin{verbatim}
+    [3,20]
+    % 117,311,107 inferences, 7.362 CPU in 7.366 seconds
+    4
+    [3,22]
+    % 116,841,765 inferences, 7.302 CPU in 7.308 seconds
+    2
+    [3,26]
+    % 114,222,392 inferences, 7.188 CPU in 7.192 seconds
+    3
+    [3,27]
+    % 116,874,628 inferences, 7.416 CPU in 7.420 seconds
+    0
+    [2,31]
+    % 102,368,740 inferences, 6.496 CPU in 6.500 seconds
+    2
+    [4,35]
+    % 89,958,939 inferences, 5.656 CPU in 5.659 seconds
+    4
+    [0,1000000]
+    % 67,335,004 inferences, 4.023 CPU in 4.026 seconds
+    6
+    [0,1000000]
+    % 62,683,419 inferences, 4.098 CPU in 4.100 seconds
+    2
+    [0,1000000]
+    % 60,393,246 inferences, 3.973 CPU in 3.975 seconds
+    0
+    [4,1000000]
+    % 50,379,805 inferences, 2.997 CPU in 2.999 seconds
+    2
+    [1,1000000]
+    % 23,534,881 inferences, 1.513 CPU in 1.514 seconds
+\end{verbatim}
+
+Alpha-beta pruning textual statistics
+\begin{verbatim}
+    [3,20]
+    % 14,071,311 inferences, 0.928 CPU in 0.929 seconds
+    4
+    [3,22]
+    % 14,124,223 inferences, 0.900 CPU in 0.902 seconds
+    2
+    [3,26]
+    % 20,698,596 inferences, 1.308 CPU in 1.309 seconds
+    3
+    [3,27]
+    % 17,067,110 inferences, 1.160 CPU in 1.161 seconds
+    0
+    [2,31]
+    % 14,221,267 inferences, 0.883 CPU in 0.884 seconds
+    2
+    [4,35]
+    % 12,329,467 inferences, 0.871 CPU in 0.872 seconds
+    4
+    [0,1000000]
+    % 4,751,373 inferences, 0.299 CPU in 0.300 seconds
+    6
+    [0,1000000]
+    % 4,015,472 inferences, 0.257 CPU in 0.257 seconds
+    2
+    [0,1000000]
+    % 2,491,188 inferences, 0.165 CPU in 0.165 seconds
+    0
+    [4,1000000]
+    % 3,954,875 inferences, 0.257 CPU in 0.257 seconds
+    2
+    [1,1000000]
+    % 823,608 inferences, 0.067 CPU in 0.067 seconds
+\end{verbatim}
 
 \end{document}
